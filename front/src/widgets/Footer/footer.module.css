@@ -1,0 +1,52 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding: 40px 24px;
+  background: #111827;
+  color: white;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.column h3,
+.column h4 {
+  margin: 0 0 10px;
+}
+
+.column p,
+.column a {
+  margin: 0;
+  color: #9ca3af;
+}
+
+.column a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition-duration: 200ms;
+}
+
+.column a:hover {
+  color: white;
+  transform: translateX(10px);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contactItem button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #d1d5db;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}

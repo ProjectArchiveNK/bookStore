@@ -5,7 +5,7 @@ import {
   BookOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
-  UserOutlined,
+  // UserOutlined,
 } from "@ant-design/icons";
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
     { path: "/", label: "Главная" },
     { path: "/catalog", label: "Каталог" },
     { path: "/cart", label: "Корзина" },
-    { path: "/profile", label: "Профиль" },
+    // { path: "/profile", label: "Профиль" },
   ];
   return (
     <Layout.Header className={styles.header}>
@@ -41,9 +41,9 @@ const Header = () => {
           <ShoppingCartOutlined />
         </NavLink>
 
-        <NavLink to="/profile">
+        {/* <NavLink to="/profile">
           <UserOutlined />
-        </NavLink>
+        </NavLink> */}
       </div>
     </Layout.Header>
   );
