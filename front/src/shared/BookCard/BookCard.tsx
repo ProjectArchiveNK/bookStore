@@ -5,6 +5,9 @@ import {
   ExclamationCircleOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../app/store/cartSlice";
 
 type BookCardProps = {
   id: number;
@@ -24,6 +27,7 @@ const BookCard = ({
   delay,
 }: BookCardProps) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -42,10 +46,18 @@ const BookCard = ({
 
           <p className={styles.card__author}>{bookAuthor}</p>
 
-          <h4 className={styles.card__price}>{bookPrice} ₽</h4>
+          <h4 className={styles.card__price}>
+            {bookPrice.toLocaleString("ru-RU")} ₽
+          </h4>
 
           <div className={styles.card__actions}>
-            <button className={styles.card__buy}>
+            <button
+              className={styles.card__buy}
+              onClick={(e) => {
+                e.stopPropagation();
+                dispatch(addToCart(id));
+              }}
+            >
               <p style={{ fontSize: "22px" }}>
                 <ShoppingCartOutlined />
               </p>

@@ -5,10 +5,17 @@ import {
   BookOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
-  // UserOutlined,
 } from "@ant-design/icons";
+import { useSelector } from "react-redux";
+import type { RootState } from "../../app/store/store";
 
 const Header = () => {
+  const booksId = useSelector((state: RootState) => state.cart.books);
+  const totalQuantity = booksId.reduce(
+    (total, book) => total + book.quantity,
+    0,
+  );
+
   const navItems = [
     { path: "/", label: "Главная" },
     { path: "/catalog", label: "Каталог" },
@@ -33,12 +40,17 @@ const Header = () => {
       </nav>
 
       <div className={styles.actions}>
+        <NavLink to="/">
+          <BookOutlined />
+        </NavLink>
+
         <NavLink to="/catalog">
           <SearchOutlined />
         </NavLink>
 
-        <NavLink to="/cart">
+        <NavLink to="/cart" className={styles.cart}>
           <ShoppingCartOutlined />
+          <p>{totalQuantity}</p>
         </NavLink>
 
         {/* <NavLink to="/profile">

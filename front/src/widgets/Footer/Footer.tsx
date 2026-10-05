@@ -1,6 +1,7 @@
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
-import { PhoneOutlined, MailOutlined, SendOutlined } from "@ant-design/icons";
+// import { PhoneOutlined, MailOutlined, SendOutlined } from "@ant-design/icons";
+import { SendOutlined } from "@ant-design/icons";
 
 const Footer = () => {
   return (
@@ -18,13 +19,13 @@ const Footer = () => {
         <Link to="/">Главная</Link>
         <Link to="/catalog">Каталог</Link>
         <Link to="/cart">Корзина</Link>
-        <Link to="/profile">Личный кабинет</Link>
+        {/* <Link to="/profile">Личный кабинет</Link> */}
       </div>
 
       <div className={styles.column}>
         <h4>Контакты</h4>
 
-        <div className={styles.contactItem}>
+        {/* <div className={styles.contactItem}>
           <PhoneOutlined />
           <p>+7 (999) 123-45-67</p>
         </div>
@@ -32,9 +33,9 @@ const Footer = () => {
         <div className={styles.contactItem}>
           <MailOutlined />
           <p>info@bookstore.ru</p>
-        </div>
+        </div> */}
 
-        <div className={styles.contactItem}>
+        <div className={styles.telegram}>
           <SendOutlined />
           <button>Telegram</button>
         </div>

@@ -1,26 +1,26 @@
 // главная
 import styles from "./home.module.css";
-
-import test__foto1 from "../../../public/books/test__foto1.png";
-import test__foto2 from "../../../public/books/test__foto2.png";
-import test__foto3 from "../../../public/books/test__foto3.png";
-
-import { Button } from "antd";
+import { booksInfo } from "../../data/books";
 import BookCard from "../../shared/BookCard/BookCard";
 
 const Home = () => {
+  const featuredBooks = booksInfo.filter((book) => book.isFeatured);
+
   return (
     <>
       <div className={styles.wrapper}>
-        <BookCard image={test__foto1} delay={0} />
-        <BookCard image={test__foto2} delay={100} />
-        <BookCard image={test__foto3} delay={200} />
+        {featuredBooks.map((book) => (
+          <BookCard
+            key={book.id}
+            id={book.id}
+            image={book.image}
+            bookName={book.bookName}
+            bookAuthor={book.bookAuthor}
+            bookPrice={book.bookPrice}
+            delay={book.delay}
+          />
+        ))}
       </div>
-
-      <h1>Home</h1>
-      <Button href="https://t.me/nikita_kytilov?text=XXXXSSSS" target="_blank">
-        Написать мне
-      </Button>
     </>
   );
 };

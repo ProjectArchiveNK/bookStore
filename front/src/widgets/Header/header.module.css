@@ -60,7 +60,7 @@
 }
 
 .actions svg {
-  font-size: 22px;
+  font-size: 26px;
   color: black;
   transition-duration: 200ms;
 }
@@ -68,4 +68,29 @@
 .actions svg:hover {
   color: #4361ee;
   transform: translateY(-2px);
+}
+
+.cart {
+  display: flex;
+  position: relative;
+}
+
+.cart p {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  width: 22px;
+  aspect-ratio: 1 / 1;
+
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f72585;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
 }
